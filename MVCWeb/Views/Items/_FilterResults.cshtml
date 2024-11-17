@@ -1,0 +1,33 @@
+﻿@model IEnumerable<MVCWeb.Models.OrderDetailsViewModel>
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Item ID</th>
+                <th>Item Name</th>
+                <th>Size</th>
+                <th>Agent</th>
+                <th>Order Date</th>
+                <th>Quantity</th>
+                <th>Unit Amount</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ItemID</td>
+                    <td>@item.ItemName</td>
+                    <td>@item.Size</td>
+                    <td>@item.AgentName</td>
+                    <td>@item.OrderDate.ToShortDateString()</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.UnitAmount.ToString("C")</td>
+                    <td>@item.TotalAmount.ToString("C")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
